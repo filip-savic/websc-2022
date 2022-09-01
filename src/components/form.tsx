@@ -12,7 +12,7 @@ export function Form() {
       return;
     }
 
-    const res = await fetch('http://localhost:53370/.netlify/functions/count', {
+    const res = await fetch('/.netlify/functions/count', {
       method: 'POST',
       body: JSON.stringify({ count }),
     }).then((res) => res.json());
@@ -36,7 +36,7 @@ export function Form() {
           onChange={(e) => setCount(e.target.value)}
           value={count}
         />
-        
+
         <button className={styles.button}>Submit</button>
       </form>
     </>
